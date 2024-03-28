@@ -1,4 +1,5 @@
 using System.Text;
+using _2048.Menu;
 using _2048.utils;
 
 namespace _2048;
@@ -99,6 +100,9 @@ public class Game
             case ConsoleKey.RightArrow:
                 Map.Move(Direction.Right);
                 Updated = true;
+                break;
+            case ConsoleKey.Q:
+                new LoseMenu(Score).Run();
                 break;
         }
     }

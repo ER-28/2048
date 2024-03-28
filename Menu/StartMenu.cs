@@ -17,7 +17,7 @@ public class StartMenu : Menu
             {
                 new Game(2);
             }, 2),
-            new MenuOption("#yellow#Hard", () =>
+            new MenuOption("#yellow#Hard (Original)", () =>
             {
                 new Game(3);
             }, 3),

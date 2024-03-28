@@ -52,9 +52,10 @@ public class Map
     {
         var mapWidth = _map[0].Count * 7;
         var startX = (Console.WindowWidth - mapWidth) / 2;
-
-        Console.SetCursorPosition(Console.WindowWidth / 2 - ColorWrite.GetTextLength(Game.Score.ToString()) / 2, Console.WindowHeight);
-        ColorWrite.Parser($"#yellow#Score: {Game.Score}");
+        var scoreText = $"#yellow#Score: {Game.Score} #red#Press Q for quit";
+        
+        Console.SetCursorPosition(Console.WindowWidth / 2 - ColorWrite.GetTextLength(scoreText) / 2, Console.WindowHeight);
+        ColorWrite.Parser(scoreText);
         
         Console.SetCursorPosition(0, 0);
         
