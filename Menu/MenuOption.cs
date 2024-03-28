@@ -2,21 +2,14 @@ using _2048.utils;
 
 namespace _2048.Menu;
 
-public class MenuOption
+public class MenuOption(string label, Action action, int index, bool centered = true)
 {
-    public string Label { get; set; }
-    public bool Centered { get; set; }
-    public int Index { get; set; }
+    private string Label { get; set; } = label;
+    private bool Centered { get; set; } = centered;
+    private int Index { get; set; } = index;
     public bool Selected { get; set; }
-    
-    public MenuOption(string label, Action action, int index, bool centered = true)
-    {
-        Label = label;
-        // Action = action;
-        Centered = centered;
-        Index = index;
-    }
-    
+    public Action Action { get; set; } = action;
+
     public void Display()
     {
         if (Centered) Console.SetCursorPosition(Console.WindowWidth / 2 - (ColorWrite.GetTextLength(Label) / 2), Console.WindowHeight / 2 + Index);
