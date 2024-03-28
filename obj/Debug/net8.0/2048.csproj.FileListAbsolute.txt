@@ -1,0 +1,14 @@
+/home/l-guerra-rago/RiderProjects/2048/bin/Debug/net8.0/2048
+/home/l-guerra-rago/RiderProjects/2048/bin/Debug/net8.0/2048.deps.json
+/home/l-guerra-rago/RiderProjects/2048/bin/Debug/net8.0/2048.runtimeconfig.json
+/home/l-guerra-rago/RiderProjects/2048/bin/Debug/net8.0/2048.dll
+/home/l-guerra-rago/RiderProjects/2048/bin/Debug/net8.0/2048.pdb
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.GeneratedMSBuildEditorConfig.editorconfig
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.AssemblyInfoInputs.cache
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.AssemblyInfo.cs
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.csproj.CoreCompileInputs.cache
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.dll
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/refint/2048.dll
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.pdb
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/2048.genruntimeconfig.cache
+/home/l-guerra-rago/RiderProjects/2048/obj/Debug/net8.0/ref/2048.dll
