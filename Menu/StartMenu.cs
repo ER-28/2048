@@ -9,14 +9,26 @@ public class StartMenu : Menu
         Title = _2048_title;
         Subtitle = $"#cyan#Welcome to {_2048_title} !";
         Options = [
-            new MenuOption("#cyan#Start Game", () =>
+            new MenuOption("#green#Easy", () =>
             {
-                new Game();
+                new Game(1);
             }, 1),
-            new MenuOption("#red#Exit", () =>
+            new MenuOption("#cyan#Medium", () =>
+            {
+                new Game(2);
+            }, 2),
+            new MenuOption("#yellow#Hard", () =>
+            {
+                new Game(3);
+            }, 3),
+            new MenuOption("#red#Hardcore", () =>
+            {
+                new Game(4);
+            }, 4),
+            new MenuOption("#darkred#Exit", () =>
             {
                 Environment.Exit(0);
-            }, 2)
+            }, 5)
         ];
         Centered = true;
     }

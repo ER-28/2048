@@ -1,3 +1,4 @@
+using _2048.Menu;
 using _2048.utils;
 
 namespace _2048;
@@ -83,11 +84,11 @@ public class Map
                     32 => "#magenta#",
                     64 => "#yellow#",
                     128 => "#white#",
-                    256 => "#black#",
+                    256 => "#red#",
                     512 => "#green#",
                     1024 => "#blue#",
                     2048 => "#cyan#",
-                    _ => "#red#"
+                    _ => "#cyan#"
                 };
                 
                 if (row[x] == 0) Console.Write("     ");
@@ -124,7 +125,10 @@ public class Map
                 break;
         }
         AddRandomTile();
-        if (CheckGameOver()) Game.Running = false;
+        
+        if (CheckGameOver()) new LoseMenu(Game.Score).Run();
+        
+        if (CheckWin()) new WinMenu(Game.Score).Run();
     }
 
     private void MoveUp()
@@ -293,5 +297,18 @@ public class Map
         }
         
         return true;
+    }
+    
+    public bool CheckWin()
+    {
+        for (var y = 0; y < _height; y++)
+        {
+            for (var x = 0; x < _width; x++)
+            {
+                if (_map[y][x] == 2048) return true;
+            }
+        }
+        
+        return false;
     }
 }
