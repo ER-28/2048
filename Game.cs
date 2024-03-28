@@ -5,9 +5,10 @@ namespace _2048;
 
 public class Game
 {
-    private bool _running = true;
+    public static bool Running = true;
     public static Map Map { get; set; } = new Map(4, 4);
     public static bool Updated { get; set; } = true;
+    public static bool Win { get; set; } = false;
     
     public Game()
     {
@@ -19,7 +20,7 @@ public class Game
     
     private void Loop()
     {
-        while (_running)
+        while (Running)
         {
             Console.SetCursorPosition(0, 0);
 
@@ -33,6 +34,8 @@ public class Game
             
             Thread.Sleep(100);
         }
+        Console.Clear();
+        Console.WriteLine(Win ? "You won!" : "You lost!");
     }
     
     public void HandleInput()

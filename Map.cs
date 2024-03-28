@@ -121,6 +121,7 @@ public class Map
                 break;
         }
         AddRandomTile();
+        if (CheckGameOver()) Game.Running = false;
     }
 
     private void MoveUp()
@@ -269,5 +270,21 @@ public class Map
                 }
             }
         }
+    }
+    
+    public bool CheckGameOver()
+    {
+        for (var y = 0; y < _height; y++)
+        {
+            for (var x = 0; x < _width; x++)
+            {
+                if (_map[y][x] == 0) return false;
+                
+                if (x + 1 < _width && _map[y][x] == _map[y][x + 1]) return false;
+                if (y + 1 < _height && _map[y][x] == _map[y + 1][x]) return false;
+            }
+        }
+        
+        return true;
     }
 }
