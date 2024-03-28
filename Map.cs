@@ -100,10 +100,7 @@ public class Map
 
             Console.SetCursorPosition(startX, Console.CursorTop);
 
-            for (var x = 0; x < row.Count; x++)
-            {
-                Console.Write("└─────┘");
-            }
+            for (var x = 0; x < row.Count; x++) Console.Write("└─────┘");
 
             Console.WriteLine();
         }
