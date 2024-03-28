@@ -43,7 +43,8 @@ public class Map
         if (emptyTiles.Count == 0) return;
         
         var randomTile = emptyTiles[new Random().Next(0, emptyTiles.Count)];
-        _map[randomTile.Y][randomTile.X] = 2;
+        var value = new Random().Next(0, 10) < 6 ? 2 : 4;
+        _map[randomTile.Y][randomTile.X] = value;
     }
 
     public void Draw()
@@ -51,6 +52,11 @@ public class Map
         var mapWidth = _map[0].Count * 7;
         var startX = (Console.WindowWidth - mapWidth) / 2;
 
+        Console.SetCursorPosition(Console.WindowWidth / 2 - ColorWrite.GetTextLength(Game.Score.ToString()) / 2, Console.WindowHeight);
+        ColorWrite.Parser($"#yellow#Score: {Game.Score}");
+        
+        Console.SetCursorPosition(0, 0);
+        
         foreach (var row in _map)
         {
             Console.SetCursorPosition(startX, Console.CursorTop);
@@ -149,6 +155,7 @@ public class Map
                     else if (_map[y2][x] == _map[y][x])
                     {
                         _map[y2][x] *= 2;
+                        Game.Score += _map[y2][x];
                         _map[y][x] = 0;
                         break;
                     }
@@ -186,6 +193,7 @@ public class Map
                     else if (_map[y2][x] == _map[y][x])
                     {
                         _map[y2][x] *= 2;
+                        Game.Score += _map[y2][x];
                         _map[y][x] = 0;
                         break;
                     }
@@ -223,6 +231,7 @@ public class Map
                     else if (_map[y][x2] == _map[y][x])
                     {
                         _map[y][x2] *= 2;
+                        Game.Score += _map[y][x2];
                         _map[y][x] = 0;
                         break;
                     }
@@ -260,6 +269,7 @@ public class Map
                     else if (_map[y][x2] == _map[y][x])
                     {
                         _map[y][x2] *= 2;
+                        Game.Score += _map[y][x2];
                         _map[y][x] = 0;
                         break;
                     }
